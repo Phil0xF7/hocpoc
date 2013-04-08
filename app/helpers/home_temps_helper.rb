@@ -1,0 +1,2 @@
+module HomeTempsHelper
+end

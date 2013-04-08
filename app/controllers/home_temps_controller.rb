@@ -1,0 +1,2 @@
+class HomeTempsController < ApplicationController
+end
