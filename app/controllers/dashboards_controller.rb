@@ -2,11 +2,11 @@ class DashboardsController < ApplicationController
   # GET /dashboards
   # GET /dashboards.json
   def index
-    @dashboards = Dashboard.all
+    @hometemps = HomeTemp.all
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @dashboards }
+      format.json { render json: @hometemps }
     end
   end
 

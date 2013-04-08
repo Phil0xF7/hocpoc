@@ -7,11 +7,8 @@
     <th></th>
   </tr>
 
-<% @dashboards.each do |dashboard| %>
-  <tr>
-    <td><%= link_to 'Show', dashboard %></td>
-    <td><%= link_to 'Edit', edit_dashboard_path(dashboard) %></td>
-    <td><%= link_to 'Destroy', dashboard, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<% @hometemps.each do |ht| %>
+  <tr><%= ht.temp %> - <%= ht.humidity %><br>
   </tr>
 <% end %>
 </table>
