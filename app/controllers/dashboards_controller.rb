@@ -2,7 +2,9 @@ class DashboardsController < ApplicationController
   # GET /dashboards
   # GET /dashboards.json
   def index
-    @hometemps = HomeTemp.all
+    @hometemps = HomeTemp.select("created_at, temp")
+
+    @hometemps.map! {|h| {:x => h.created_at.to_i, :y => h.temp.to_f}}
 
     respond_to do |format|
       format.html # index.html.erb

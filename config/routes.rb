@@ -2,6 +2,8 @@ Hocpoc::Application.routes.draw do
   resources :dashboards
   root :to => 'dashboards#index'
 
+  match 'hometemps' => 'home_temps#index'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

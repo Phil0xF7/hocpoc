@@ -1,20 +1,31 @@
 <h1>Listing dashboards</h1>
 
-<table>
-  <tr>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<%= @hometemps.to_json.html_safe %>
 
-<% @hometemps.each do |ht| %>
-  <tr><%= ht.temp %> - <%= ht.humidity %><br>
-  </tr>
+<br><br><br>
+
+<style>
+#chart_container {
+        position: relative;
+        font-family: Arial, Helvetica, sans-serif;
+}
+#chart {
+        position: relative;
+        left: 40px;
+}
+#y_axis {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 40px;
+}
+</style>
+
+<%= javascript_tag do %>
+  data = <%= @hometemps.to_json.html_safe %>;
 <% end %>
-</table>
 
-<br />
-
-<div id="chart"></div>
-
-
+<div id="chart_container">
+  <div id="y_axis"></div>
+  <div id="chart"></div>
+</div>
