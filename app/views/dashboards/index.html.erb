@@ -21,11 +21,9 @@
 }
 </style>
 
-<%= javascript_tag do %>
-  data = <%= @hometemps.to_json.html_safe %>;
-<% end %>
 
 <div id="chart_container">
   <div id="y_axis"></div>
-  <div id="chart"></div>
+  <div id="chart" data-url=<%= @hometemps.to_json.html_safe %>></div>
 </div>
+
