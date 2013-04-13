@@ -3,6 +3,8 @@ Hocpoc::Application.routes.draw do
   root :to => 'dashboards#index'
 
   match 'hometemps' => 'home_temps#index'
+  match 'hometemps/temp' => 'home_temps#temp'
+  match 'hometemps/humidity' => 'home_temps#humidity'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
