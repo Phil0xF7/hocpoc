@@ -1,17 +1,17 @@
 $(function () {
+  var palette = new Rickshaw.Color.Palette({ scheme: 'colorwheel' });
+
   var graph = new Rickshaw.Graph.Ajax( {
           element: document.querySelector("#chart"),
           dataURL: '/hometemps/data',
-          width: 580,
-          height: 250,
           max: 100,
           renderer: 'line',
           series: [ {
                   name: "Temp",
-                  color: 'blue'
+                  color: palette.color()
                   }, {
                   name: "Humidity",
-                  color: 'lightblue'
+                  color: palette.color()
           } ],
           onComplete: function(transport) {
             var graph = transport.graph;
@@ -25,6 +25,7 @@ $(function () {
                     element: document.getElementById('y_axis')
             } );
             y_axis.graph.update();
+
             var hoverDetail = new Rickshaw.Graph.HoverDetail( {
               graph: graph,
               formatter: function(series, x, y) {
@@ -34,6 +35,18 @@ $(function () {
                 return content;
               }
             } );
+
+            var legend = new Rickshaw.Graph.Legend({
+                graph: graph,
+                element: document.querySelector('#legend')
+            });
+
+            var highlighter = new Rickshaw.Graph.Behavior.Series.Highlight({
+                graph: graph,
+                legend: legend
+            });
           }
   } );
+
+
 });
