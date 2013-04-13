@@ -3,6 +3,7 @@ Hocpoc::Application.routes.draw do
   root :to => 'dashboards#index'
 
   match 'hometemps' => 'home_temps#index'
+  match 'hometemps/data' => 'home_temps#data'
   match 'hometemps/temp' => 'home_temps#temp'
   match 'hometemps/humidity' => 'home_temps#humidity'
 

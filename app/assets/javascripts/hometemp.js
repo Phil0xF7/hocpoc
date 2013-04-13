@@ -1,7 +1,7 @@
 $(function () {
   var graph = new Rickshaw.Graph.Ajax( {
           element: document.querySelector("#chart"),
-          dataURL: '/hometemps/temp',
+          dataURL: '/hometemps/data',
           width: 580,
           height: 250,
           max: 100,
@@ -9,6 +9,9 @@ $(function () {
           series: [ {
                   name: "Temp",
                   color: 'blue'
+                  }, {
+                  name: "Humidity",
+                  color: 'lightblue'
           } ],
           onComplete: function(transport) {
             var graph = transport.graph;
