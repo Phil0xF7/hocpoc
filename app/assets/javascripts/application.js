@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require twitter/bootstrap
 //= require d3.v3.min
 //= require rickshaw.min
 //= require_tree .
