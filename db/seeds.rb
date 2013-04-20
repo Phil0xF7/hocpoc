@@ -15,3 +15,9 @@ HomeTemp.create(temp: 61.7, humidity: 42.6, hvac_heater_state: true, hvac_fan_st
 HomeTemp.create(temp: 66.1, humidity: 44.4, hvac_heater_state: false, hvac_fan_state: false)
 HomeTemp.create(temp: 68.2, humidity: 43.9, hvac_heater_state: false, hvac_fan_state: false)
 HomeTemp.create(temp: 65.5, humidity: 42.8, hvac_heater_state: false, hvac_fan_state: false)
+num = 0
+HomeTemp.all.each do |entry|
+  entry.created_at += num.minutes
+  entry.save
+  num += 5
+end
