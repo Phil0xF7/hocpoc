@@ -11,13 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130408204640) do
+ActiveRecord::Schema.define(:version => 20130420044908) do
 
   create_table "home_temps", :force => true do |t|
-    t.decimal  "temp",       :precision => 5, :scale => 2
-    t.decimal  "humidity",   :precision => 5, :scale => 2
-    t.datetime "created_at",                               :null => false
-    t.datetime "updated_at",                               :null => false
+    t.decimal  "temp",              :precision => 5, :scale => 2
+    t.decimal  "humidity",          :precision => 5, :scale => 2
+    t.datetime "created_at",                                      :null => false
+    t.datetime "updated_at",                                      :null => false
+    t.boolean  "hvac_heater_state"
+    t.boolean  "hvac_fan_state"
   end
 
 end
