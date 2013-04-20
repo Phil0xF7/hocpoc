@@ -1,5 +1,5 @@
 class HomeTemp < ActiveRecord::Base
-  attr_accessible :humidity, :temp
+  attr_accessible :humidity, :temp, :hvac_heater_state, :hvac_fan_state
 
   def self.retrieve_data
     logger.info "#{Time.now} - HomeTemp.retrieve_data - Start"

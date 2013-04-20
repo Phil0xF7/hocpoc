@@ -12,6 +12,9 @@ $(function () {
                   }, {
                   name: "Humidity",
                   color: palette.color()
+                  }, {
+                  name: "Heater",
+                  color: palette.color()
           } ],
           onComplete: function(transport) {
             var graph = transport.graph;
