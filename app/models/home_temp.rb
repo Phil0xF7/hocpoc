@@ -8,7 +8,12 @@ class HomeTemp < ActiveRecord::Base
 
     if @nest
       logger.info "#{Time.now} - HomeTemp.retrieve_data - Write to DB"
-      HomeTemp.create(:temp => @nest.current_temp, :humidity => @nest.humidity)
+      HomeTemp.create(
+        :temp => @nest.current_temp,
+        :humidity => @nest.humidity,
+        :hvac_heater_state => @nest.status["shared"][@nest.device_id]["hvac_heater_state"],
+        :hvac_fan_state => @nest.status["shared"][@nest.device_id]["hvac_fan_state"]
+      )
     else
       logger.error "#{Time.now} - HomeTemp.retrieve_data - Error establishing connection"
     end

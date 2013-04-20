@@ -12,7 +12,7 @@ class HomeTempsController < ApplicationController
 
     @hvac_heat = HomeTemp.select {"created_at, hvac_heater_state"}
     @hvac_heat.map! {|h|
-      h.hvac_heater_state ? heater_val = 25 : heater_val = 0
+      h.hvac_heater_state ? heater_val = 20 : heater_val = 0
       {:x => h.created_at.to_i, :y => heater_val}
     }
     @data << {:name => "Heater", :data => @hvac_heat}
